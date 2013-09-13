@@ -15,7 +15,7 @@ if(parts[3] == 'pull') {
         url: url,
         ignoreCache: true,
         onload: function(res) {
-            pullinfo=$.parseJSON(res.responseText);
+            var pullinfo=$.parseJSON(res.responseText);
             if(!pullinfo.merged) {
                 $('#discussion_bucket .discussion-sidebar .discussion-stats').append('<p>can '+(pullinfo.mergeable ? '' : 'NOT ')+'be merged</p>');
             }
